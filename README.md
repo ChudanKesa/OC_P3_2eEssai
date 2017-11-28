@@ -1,1 +1,2 @@
-# OC_P3_2eEssai
+# OpenClassrooms : Projet N°3
+2e essai
