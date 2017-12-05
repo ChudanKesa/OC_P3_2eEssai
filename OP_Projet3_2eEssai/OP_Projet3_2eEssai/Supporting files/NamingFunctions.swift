@@ -67,7 +67,14 @@ extension Support
         while error
         {
             name = Support.randomNames(i: i)
-            error = nameTaken(name: name, players: &players)
+            if name == ""
+            {
+                error = true
+            }
+            else
+            {
+                error = nameTaken(name: name, players: &players)
+            }
             i += 1
         }
         

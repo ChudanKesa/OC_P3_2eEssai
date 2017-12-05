@@ -11,7 +11,7 @@ import Foundation
 extension Player
 {
     // recaps party and asks confirmation
-    func askConfirmParty(party: [Caracter])
+    func askConfirmParty()
     {
         usleep(1 * 100 * 1000)
         print("Your warriors has been chosen. You will fight with ")

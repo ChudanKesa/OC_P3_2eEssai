@@ -12,57 +12,53 @@ extension Support
 {
     // returns a random name so askForName can get it.
     
-    static func randomNames(i: Int) -> String
+    static var names = ["Gerald",
+                 "Geronimo",
+                 "Aindrea",
+                 "Gedeon",
+                 "Baghadur",
+                 "Blair",
+                 "Cadell",
+                 "Caderyn",
+                 "Caedmon",
+                 "Càel",
+                 "Cay",
+                 "Cedric",
+                 "Conlanoch",
+                 "Deandre",
+                 "Donogh",
+                 "Duncan",
+                 "Éibehar",
+                 "Gabriel",
+                 "Hania",
+                 "Ingvar",
+                 "Kaden",
+                 "Rayner",
+                 "Straton",
+                 "Takeshi",
+                 "Verner",
+                 "Volker",
+                 "Volundr",
+                 "Walter",
+                 "Wyatt",
+                 "Xerces"]
+    
+    static func randomNames() -> String
     {
         var name = ""
         var rand = 0
         
-        var names = ["Gerald",
-                     "Geronimo",
-                     "Aindrea",
-                     "Gedeon",
-                     "Baghadur",
-                     "Blair",
-                     "Cadell",
-                     "Caderyn",
-                     "Caedmon",
-                     "Càel",
-                     "Cay",
-                     "Cedric",
-                     "Conlanoch",
-                     "Deandre",
-                     "Donogh",
-                     "Duncan",
-                     "Éibehar",
-                     "Gabriel",
-                     "Hania",
-                     "Ingvar",
-                     "Kaden",
-                     "Rayner",
-                     "Straton",
-                     "Takeshi",
-                     "Verner",
-                     "Volker",
-                     "Volundr",
-                     "Walter",
-                     "Wyatt",
-                     "Xerces"]
-        
-        rand = Int(arc4random_uniform(UInt32(names.count)))
-        if (rand + i) > names.count
+        if names.count == 0
         {
-            if i < names.count
-            {
-                rand = 0
-                name = names[rand + i]
-            }
-                
-            else
-            {
-                name = "ERROR"
-            }
+            name = "ERROR"
         }
-        
+        else
+        {
+            rand = Int(arc4random_uniform(UInt32(names.count)))
+            
+            name = names[rand]
+            names.remove(at: rand)
+        }
         
         return name
     }

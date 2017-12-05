@@ -14,7 +14,6 @@ extension Player
     {
         var auto = false
         var partyOK = false
-        var party = [Caracter]()
         
         while !partyOK
         {
@@ -29,7 +28,7 @@ extension Player
                 party = createParty()
             }
             
-            askConfirmParty(party: party)
+            askConfirmParty()
             partyOK = doConfirmParty()
             
             if partyOK
