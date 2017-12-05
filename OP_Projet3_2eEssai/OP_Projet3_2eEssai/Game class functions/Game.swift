@@ -14,12 +14,12 @@ class Game
         // play game
     
     var players = [Player]()
+    var keepPlaying = true
     
     init()
     {
         players = getPlayersNames(numberOfPlayers: getNPlayers())
+        Support.snitch(on: players)
     }
-    
-    
-    
 }
+

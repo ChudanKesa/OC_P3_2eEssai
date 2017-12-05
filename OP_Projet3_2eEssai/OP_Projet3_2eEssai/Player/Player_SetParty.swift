@@ -29,7 +29,7 @@ extension Player
                 party = createParty()
             }
             
-            askConfirmParty()
+            askConfirmParty(party: party)
             partyOK = doConfirmParty()
             
             if partyOK

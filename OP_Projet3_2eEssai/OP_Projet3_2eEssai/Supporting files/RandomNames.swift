@@ -67,29 +67,6 @@ extension Support
         return name
     }
     
-    
-    //////////
-    // checks if name is already taken
-    
-    static func nameTaken(name entry: String, players: [Player]) -> Bool
-    {
-        var nameTaken = false
-        
-        for i in 0..<players.count
-        {
-            for j in 0..<players[i].party.count
-            {
-                if entry == players[i].party[j].name
-                {
-                    nameTaken = true
-                }
-            }
-        }
-        
-        if entry == "ERROR" {nameTaken = true}
-        
-        return nameTaken
-    }
 }
 
 

@@ -8,8 +8,13 @@
 
 import Foundation
 
-print("Hello, World!")
+var keepGoing = true
 
+while keepGoing
+{
+    let game = Game()
+    keepGoing = game.finishGame()
+}
 
 
 

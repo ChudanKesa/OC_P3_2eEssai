@@ -96,13 +96,13 @@ class Support
                     retour = read
                 }
                 
-                /*if retour == "123456"
+                if retour == "123456"
                 {
                     cheat()
                     print("We were trying to confirm something. Let's do that again.")
-                }*/
+                }
                     
-                /*else*/ if retour == "n" || retour == "N" || retour == "y" || retour == "Y"
+                else if retour == "n" || retour == "N" || retour == "y" || retour == "Y"
                 {
                     error = false
                 }

@@ -8,8 +8,10 @@
 
 import Foundation
 
-extension Game
+extension Support
 {
+    static var players = [String]() // needed to memorize the caracters' names.
+    
     // asks for a string. To be used for naming caracters. Also permit "" entry for random name.
     
     static func askForName() -> String
@@ -17,7 +19,6 @@ extension Game
         var name = ""
         var read: String?
         var error = true
-        
         
         while error
         {
@@ -30,7 +31,9 @@ extension Game
                 {
                     name = autoName(read: name)
                 }
-                error = Support.nameTaken(name: name, players: players)
+                
+                error = nameTaken(name: name, players: &players)
+                
                 if name == "ERROR"
                 {
                     print("No more automatic names availlable. Please enter a new one.\n")
@@ -51,10 +54,10 @@ extension Game
     
    
     
-    //////////
-    // gives name and checks if it's already attributed. If it is, makes randomNames choose the next on the list, and so on. If there are no names left availlable, name = ERROR.
-    // cannot be private due to use in Caracter -> auto init
     
+    
+    
+    // gives name and checks if it's already attributed. If it is, makes randomNames choose the next on the list, and so on. If there are no names left availlable, name = ERROR.
     static func autoName(read: String) -> String
     {
         var name = ""
@@ -64,10 +67,37 @@ extension Game
         while error
         {
             name = Support.randomNames(i: i)
-            error = Support.nameTaken(name: name)
+            error = nameTaken(name: name, players: &players)
             i += 1
         }
         
         return name
+    }
+    
+    
+    
+    
+    
+    // checks if name is already taken
+    static func nameTaken(name entry: String, players: inout [String]) -> Bool
+    {
+        var nameTaken = false
+
+        for i in 0..<players.count
+        {
+            if entry == players[i]
+            {
+                nameTaken = true
+            }
+        }
+        
+        if entry == "ERROR" {nameTaken = true}
+        
+        if !nameTaken
+        {
+            players.append(entry)
+        }
+        
+        return nameTaken
     }
 }

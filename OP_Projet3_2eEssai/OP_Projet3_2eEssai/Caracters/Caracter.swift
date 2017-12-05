@@ -16,7 +16,7 @@ class Warrior: Caracter
         super.init(lifePoints: 100, weapon: Weapon(name: "Sword", damage: 10), name: "")
         caste = .warrior
         print("Choose a name for your Warrior (press entry for random name) :")
-        name = Game.askForName()
+        name = Support.askForName()
         print("This Warrior shall be called \(name).")
         usleep(8 * 100 * 1000)
         print("He is currently equiped with \(weapon.adressWeapon(weapon: weapon)), which causes \(weapon.damage) damage per turn.\n")
@@ -27,7 +27,7 @@ class Warrior: Caracter
     {
         super.init(lifePoints: 100, weapon: Weapon(name: "Sword", damage: 10), name: "")
         caste = .warrior
-        name = Game.autoName(read: "")
+        name = Support.autoName(read: "")
     }
     
     init(robot: String)
@@ -51,7 +51,7 @@ class Wizzard: Caracter
         power.weapon = self.weapon
         caste = .wizzard
         print("Choose a name for your Wizzard (press entry for random name) :")
-        name = Game.askForName()
+        name = Support.askForName()
         print("This Wizzard shall be called \(name).")
         usleep(8 * 100 * 1000)
         print("He is currently equiped with \(weapon.adressWeapon(weapon: weapon)), which causes \(weapon.damage) damage per turn.\n")
@@ -63,7 +63,7 @@ class Wizzard: Caracter
         super.init(lifePoints: 90, weapon: Weapon(name: "Staff", damage: 5), name: "")
         power.weapon = self.weapon
         caste = .wizzard
-        name = Game.autoName(read: "")
+        name = Support.autoName(read: "")
     }
     
     init(robot: String)
@@ -84,7 +84,7 @@ class Giant: Caracter
         super.init(lifePoints: 210, weapon: Weapon(name: "Giant bare hands", damage: 4), name: "")
         caste = .giant
         print("Choose a name for your Giant (press entry for random name) :")
-        name = Game.askForName()
+        name = Support.askForName()
         print("This Giant shall be called \(name).")
         usleep(8 * 100 * 1000)
         print("He is currently equiped with \(weapon.adressWeapon(weapon: weapon)), which causes \(weapon.damage) damage per turn.\n")
@@ -95,7 +95,7 @@ class Giant: Caracter
     {
         super.init(lifePoints: 210, weapon: Weapon(name: "Giant bare hands", damage: 4), name: "")
         caste = .giant
-        name = Game.autoName(read: "")
+        name = Support.autoName(read: "")
     }
     
     init(robot: String)
@@ -113,7 +113,7 @@ class Dwarf: Caracter
         super.init(lifePoints: 70, weapon: Weapon(name: "Axe", damage: 14), name: "")
         caste = .dwarf
         print("Choose a name for your Dwarf (press entry for random name) :")
-        name = Game.askForName()
+        name = Support.askForName()
         print("This Dwarf shall be called \(name).")
         usleep(8 * 100 * 1000)
         print("He is currently equiped with \(weapon.adressWeapon(weapon: weapon)), which causes \(weapon.damage) damage per turn.\n")
@@ -124,7 +124,7 @@ class Dwarf: Caracter
     {
         super.init(lifePoints: 70, weapon: Weapon(name: "Axe", damage: 14), name: "")
         caste = .dwarf
-        name = Game.autoName(read: "")
+        name = Support.autoName(read: "")
     }
     
     init(robot: String)
@@ -142,7 +142,7 @@ class Archer: Caracter
         super.init(lifePoints: 90, weapon: Weapon(name: "Bow", damage: 9), name: "")
         caste = .archer
         print("Choose a name for your Archer (press entry for random name) :")
-        name = Game.askForName()
+        name = Support.askForName()
         print("This Archer shall be called \(name).")
         usleep(8 * 100 * 1000)
         print("He is currently equiped with \(weapon.adressWeapon(weapon: weapon)), which causes \(weapon.damage) damage per turn.\n")
@@ -153,7 +153,7 @@ class Archer: Caracter
     {
         super.init(lifePoints: 90, weapon: Weapon(name: "Bow", damage: 9), name: "")
         caste = .archer
-        name = Game.autoName(read: "")
+        name = Support.autoName(read: "")
     }
     
     init(robot: String)
