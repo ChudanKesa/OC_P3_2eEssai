@@ -42,7 +42,7 @@ extension Support
             {
                 for j in 0..<cheated[i].party.count
                 {
-                    print("\(number). \(cheated[i].name)'s \(cheated[i].party[j].caste.rawValue) : \(cheated[i].party[j].name)", terminator: " "); cheated[i].party[j].symbol(caste: cheated[i].party[j]); print("")
+                    print("\(number). \(cheated[i].name)'s \(cheated[i].party[j].caste.rawValue) : \(cheated[i].party[j].name)", terminator: " "); cheated[i].party[j].symbol(caste: cheated[i].party[j]); print("- \(cheated[i].party[j].lifePoints) LP")
                     tab.append(cheated[i].party[j])
                     number += 1
                 }

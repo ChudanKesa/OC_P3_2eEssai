@@ -122,16 +122,16 @@ extension Player
         for i in 1...3
         {
             print("Choose your caracter n°\(i) :")
-            usleep(12 * 100 * 1000)
+           // usleep(12 * 100 * 1000)
             print("1. A Warrior. ⚔")
             print(Caracter.caracterDescription(caste: .warrior))
-            usleep(10 * 100 * 1000)
+          //  usleep(10 * 100 * 1000)
             print("2. A Wizzard. 🔮")
             print(Caracter.caracterDescription(caste: .wizzard))
-            usleep(10 * 100 * 1000)
+           // usleep(10 * 100 * 1000)
             print("3. A Giant. 👹")
             print(Caracter.caracterDescription(caste: .giant))
-            usleep(10 * 100 * 1000)
+          //  usleep(10 * 100 * 1000)
             print("4. A Dwarf. 🍺")
             print(Caracter.caracterDescription(caste: .dwarf))
             

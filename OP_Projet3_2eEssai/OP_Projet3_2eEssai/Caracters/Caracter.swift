@@ -29,14 +29,6 @@ class Warrior: Caracter
         caste = .warrior
         name = Support.autoName(read: "")
     }
-    
-    init(robot: String)
-    {
-        super.init(lifePoints: 100, weapon: Weapon(name: "Sword", damage: 10), name: "")
-        caste = .warrior
-        name = robot
-    }
-
 }
 
 

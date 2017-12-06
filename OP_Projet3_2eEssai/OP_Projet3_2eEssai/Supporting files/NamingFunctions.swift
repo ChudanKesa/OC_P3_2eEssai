@@ -10,7 +10,7 @@ import Foundation
 
 extension Support
 {
-    static var players = [String]() // needed to memorize the caracters' names.
+    static var caractersNames = [String]() // needed to memorize the caracters' names.
     
     // asks for a string. To be used for naming caracters. Also permit "" entry for random name.
     
@@ -29,10 +29,10 @@ extension Support
                 name = read!
                 if name == ""
                 {
-                    name = autoName(read: name)
+                    name = randomNames()
                 }
                 
-                error = nameTaken(name: name, players: &players)
+                error = nameTaken(name: name)
                 
                 if name == "ERROR"
                 {
@@ -41,6 +41,10 @@ extension Support
                 if error == true && name != "ERROR"
                 {
                     print("This name has alredy been taken. Please choose a new one.\n")
+                }
+                if error == false && name != "ERROR"
+                {
+                    caractersNames.insert(name, at: 0)
                 }
             }
             else
@@ -57,25 +61,33 @@ extension Support
     
     
     
-    // gives name and checks if it's already attributed. If it is, makes randomNames choose the next on the list, and so on. If there are no names left availlable, name = ERROR.
+    // gives name and checks if it's already attributed. If there are no names left availlable, name = ERROR.
     static func autoName(read: String) -> String
     {
         var name = ""
         var error = true
-        var i = 0
         
         while error
         {
-            name = Support.randomNames(i: i)
+            name = Support.randomNames()
             if name == ""
             {
                 error = true
             }
+            else if name == "ERROR"
+            {
+                print("No more automatic names availlable. Please enter a new one.\n")
+                name = askForName()
+                error = false
+            }
             else
             {
-                error = nameTaken(name: name, players: &players)
+                error = nameTaken(name: name)
+                if !error
+                {
+                    caractersNames.insert(name, at: 0)
+                }
             }
-            i += 1
         }
         
         return name
@@ -86,13 +98,13 @@ extension Support
     
     
     // checks if name is already taken
-    static func nameTaken(name entry: String, players: inout [String]) -> Bool
+    static func nameTaken(name entry: String) -> Bool
     {
         var nameTaken = false
 
-        for i in 0..<players.count
+        for i in 0..<caractersNames.count
         {
-            if entry == players[i]
+            if entry == caractersNames[i]
             {
                 nameTaken = true
             }
@@ -100,10 +112,6 @@ extension Support
         
         if entry == "ERROR" {nameTaken = true}
         
-        if !nameTaken
-        {
-            players.append(entry)
-        }
         
         return nameTaken
     }

@@ -61,6 +61,11 @@ extension Player
             {
                 party.remove(at: 0)
             }
+            for _ in 1...3
+            {
+                Support.names.append(Support.caractersNames[0])
+                Support.caractersNames.remove(at: 0)
+            }
             return false
         case "n":
             print("Let us try again.")
@@ -68,6 +73,11 @@ extension Player
             for _ in 0..<party.count
             {
                 party.remove(at: 0)
+            }
+            for _ in 1...3
+            {
+                Support.names.append(Support.caractersNames[0])
+                Support.caractersNames.remove(at: 0)
             }
             return false
         default:

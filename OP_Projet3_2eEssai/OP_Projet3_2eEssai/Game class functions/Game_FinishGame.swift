@@ -69,10 +69,18 @@ extension Game
             {
             case "y":
                 prepare()
-                Support.players.removeAll()
+                for _ in 1...Support.caractersNames.count
+                {
+                    Support.names.append(Support.caractersNames[0])
+                    Support.caractersNames.remove(at: 0)
+                }
             case "Y":
                 prepare()
-                Support.players.removeAll()
+                for _ in 1...Support.caractersNames.count
+                {
+                    Support.names.append(Support.caractersNames[0])
+                    Support.caractersNames.remove(at: 0)
+                }
             case "n":
                 endGame()
             case "N":
