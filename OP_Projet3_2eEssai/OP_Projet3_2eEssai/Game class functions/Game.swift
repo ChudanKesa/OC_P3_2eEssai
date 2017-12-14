@@ -27,6 +27,14 @@ class Game
                 players.append(IA())
             }
         }
+        if players.count == 0
+        {
+            print("How many IA do you wish to see fight ?")
+            for _ in 1...Support.askForInt(lowerLimit: 2, upperLimit: Int.max)
+            {
+                players.append(IA())
+            }
+        }
         Support.snitch(on: players)
     }
 }

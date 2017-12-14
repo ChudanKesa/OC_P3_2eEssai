@@ -15,7 +15,7 @@ extension Player
     {
         usleep(1 * 100 * 1000)
         if IA
-        {print("\(name), welcome to existence."); usleep(1*1000*1000)}
+        {print("\n\(name), welcome to existence.\n"); usleep(1*1000*1000)}
         print("Your warriors has been chosen. You will fight with ")
         usleep(10 * 100 * 1000)
         for i in 1...3

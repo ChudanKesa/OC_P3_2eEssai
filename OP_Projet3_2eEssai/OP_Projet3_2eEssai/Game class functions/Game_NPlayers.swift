@@ -15,14 +15,17 @@ extension Game
     {
         players = [Player]()
         
-        var name = ""
-        print("Please enter the names of the players.")
-        
-        for i in 1...numberOfPlayers
+        if numberOfPlayers > 0
         {
-            print("Enter name of Player\(i) :")
-            name = Support.askForString()
-            players.append(Player(name: name, party: players[i-1].setParty()))
+            var name = ""
+            print("Please enter the names of the players.")
+            
+            for i in 1...numberOfPlayers
+            {
+                print("Enter name of Player\(i) :")
+                name = Support.askForString()
+                players.append(Player(name: name))
+            }
         }
         
         return players
@@ -57,17 +60,18 @@ extension Game
         
         print("How many people are playing ?")
         
-        numberOfPlayers = Support.askForInt(lowerLimit: 1, upperLimit: Int.max)
+        numberOfPlayers = Support.askForInt(lowerLimit: 0, upperLimit: Int.max)
         
-        if numberOfPlayers == 1
+        switch numberOfPlayers
         {
+        case 0:
+            print("You want to start a game with no humain players. Is that correct ?")
+        case 1:
             print("You want to start a game with \(numberOfPlayers) player. Is that correct ?")
-        }
-            
-        else
-        {
+        default:
             print("You want to start a game with \(numberOfPlayers) players. Is that correct ?")
         }
+        
         print("Y/N")
         
         return numberOfPlayers

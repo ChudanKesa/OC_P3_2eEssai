@@ -20,5 +20,11 @@ class Player
         self.name = name
         self.party = party
     }
+    
+    init(name: String)
+    {
+        self.name = name
+        self.party = setParty()
+    }
 }
 
