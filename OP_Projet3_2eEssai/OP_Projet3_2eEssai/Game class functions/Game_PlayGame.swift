@@ -33,7 +33,7 @@ extension Game
                 
                 if players[i] is IA
                 {
-                    (players[i] as! IA).iaTurn(i: i, powerPosition: powerPosition, totalEnnemiesLeft: totalEnnemiesLeft, numberOfPowers: numberOfPowers, players: players)
+                    (players[i] as! IA).iaTurn(i: i, powerPosition: powerPosition, totalEnnemiesLeft: totalEnnemiesLeft, players: players)
                 }
                     
                 else

@@ -11,9 +11,11 @@ import Foundation
 extension Player
 {
     // recaps party and asks confirmation
-    func askConfirmParty()
+    func askConfirmParty(IA: Bool)
     {
         usleep(1 * 100 * 1000)
+        if IA
+        {print("\(name), welcome to existence."); usleep(1*1000*1000)}
         print("Your warriors has been chosen. You will fight with ")
         usleep(10 * 100 * 1000)
         for i in 1...3
@@ -33,7 +35,10 @@ extension Player
                 Support.errorLog(origin: "Players", detail: "Switch 'i' would not read")
             }
         }
-        print("Is that correct ?\nY/N")
+        if !IA
+        {
+            print("Is that correct ?\nY/N")
+        }
     }
     
     

@@ -22,7 +22,7 @@ extension Game
         {
             print("Enter name of Player\(i) :")
             name = Support.askForString()
-            players.append(Player(name: name, party: players[i].setParty()))
+            players.append(Player(name: name, party: players[i-1].setParty()))
         }
         
         return players

@@ -19,6 +19,14 @@ class Game
     init()
     {
         players = getPlayersNames(numberOfPlayers: getNPlayers())
+        if players.count == 1
+        {
+            print("How many IA do you wish to fight ?")
+            for _ in 1...Support.askForInt(lowerLimit: 1, upperLimit: Int.max)
+            {
+                players.append(IA())
+            }
+        }
         Support.snitch(on: players)
     }
 }

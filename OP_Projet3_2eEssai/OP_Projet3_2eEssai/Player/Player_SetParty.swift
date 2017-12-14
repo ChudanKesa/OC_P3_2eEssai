@@ -28,7 +28,7 @@ extension Player
                 party = createParty()
             }
             
-            askConfirmParty()
+            askConfirmParty(IA: false)
             partyOK = doConfirmParty()
             
             if partyOK
