@@ -31,13 +31,21 @@ extension Game
                 powerCount(powerPresent: &powerPresent, powerPosition: &powerPosition, numberOfPowers: &numberOfPowers, i: i)
                 callPlayer(i: i)
                 
-                if powerPresent == true
+                if players[i] is IA
                 {
-                    chooseHealOrAttack(i: i, powerPosition: powerPosition, totalEnnemiesLeft: totalEnnemiesLeft, numberOfPowers: numberOfPowers)
+                    (players[i] as! IA).iaTurn(i: i, powerPosition: powerPosition, totalEnnemiesLeft: totalEnnemiesLeft, numberOfPowers: numberOfPowers, players: players)
                 }
+                    
                 else
                 {
-                    autoAttack(i: i, totalEnnemiesLeft: totalEnnemiesLeft)
+                    if powerPresent == true
+                    {
+                        chooseHealOrAttack(i: i, powerPosition: powerPosition, totalEnnemiesLeft: totalEnnemiesLeft, numberOfPowers: numberOfPowers)
+                    }
+                    else
+                    {
+                        autoAttack(i: i, totalEnnemiesLeft: totalEnnemiesLeft)
+                    }
                 }
                 
                 lastOneStanding()

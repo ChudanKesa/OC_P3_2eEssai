@@ -33,7 +33,8 @@ extension Game
     
     
     
-    func removeTheDead() // remove dead caracters of party
+    // remove dead caracters of party
+    func removeTheDead()
     {
         var deceased = [(Int, Int)]()
         
@@ -65,7 +66,8 @@ extension Game
     
     
     
-    private func lastOneStandingCall(e: Int) // text to call when lastonestanding == true
+    // text to call when lastonestanding == true
+    private func lastOneStandingCall(e: Int)
     {
         sleep(1)
         print("\nOh no ! \(players[e].party[0].name) is dying !")
@@ -79,7 +81,8 @@ extension Game
     
     
     
-    private func voidDeceased(deceased: [(Int, Int)]) // remove dead caracters from party
+    // remove dead caracters from party
+    private func voidDeceased(deceased: [(Int, Int)])
     {
         for t in (0..<deceased.count).reversed()
         {
@@ -92,7 +95,8 @@ extension Game
     
     
     
-    private func announceDeceased(e: Int, j: Int, deceased: inout [(Int, Int)]) // calls out names of fallen warriors
+    // calls out names of fallen warriors
+    private func announceDeceased(e: Int, j: Int, deceased: inout [(Int, Int)])
     {
         print("\n\t", terminator: "")
         switch Int(arc4random_uniform(UInt32(6)))
@@ -120,3 +124,4 @@ extension Game
     }
     
 }
+

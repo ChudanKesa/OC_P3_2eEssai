@@ -4,7 +4,7 @@
 //
 //  Created by Erwan Le Querré on 29/11/2017.
 //  Copyright © 2017 Erwan Le Querré. All rights reserved.
-//
+//’
 
 import Foundation
 
@@ -15,13 +15,10 @@ class Player
     var name: String
     
     
-    init(name: String)
+    init(name: String, party: [Caracter])
     {
         self.name = name
-        party = setParty()
+        self.party = party
     }
-    
-    
-    
 }
 

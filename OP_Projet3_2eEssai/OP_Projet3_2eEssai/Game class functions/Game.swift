@@ -10,8 +10,8 @@ import Foundation
 
 class Game
 {
-        // get players
-        // play game
+    // get players
+    // play game
     
     var players = [Player]()
     var keepPlaying = true

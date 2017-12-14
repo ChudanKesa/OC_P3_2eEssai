@@ -10,7 +10,7 @@ import Foundation
 
 extension Game
 {
-     func oneWayHeal(i: Int, powerPosition: [Int], position: Int) // if there's only one wizzard, only the target of the heal has to be choosen
+    func oneWayHeal(i: Int, powerPosition: [Int], position: Int) // if there's only one wizzard, only the target of the heal has to be choosen
     {
         if players[i].party[powerPosition[0]] is Wizzard
         {
@@ -30,7 +30,7 @@ extension Game
     
     
     
-     func multiHeal(i: Int, powerPosition: [Int], position: Int) // all the text and decorations needed to call power.multiheal
+    func multiHeal(i: Int, powerPosition: [Int], position: Int) // all the text and decorations needed to call power.multiheal
     {
         print("Thanks to his Long staff, \(players[i].party[powerPosition[position]].name) will heal the entire party !")
         usleep(5 * 100 * 1000)
@@ -49,7 +49,7 @@ extension Game
     
     
     
-     func chooseWhoToHeal(i: Int, powerPosition: [Int], position: Int) // choose who gets the heal
+    func chooseWhoToHeal(i: Int, powerPosition: [Int], position: Int) // choose who gets the heal
     {
         var select = Int()
         var target =  players[0].party[0]
@@ -74,7 +74,7 @@ extension Game
     
     
     
-     func chooseWhoHeals(i: Int, powerPosition: [Int]) -> Int // if there are several healers, choose which one acts
+    func chooseWhoHeals(i: Int, powerPosition: [Int]) -> Int // if there are several healers, choose which one acts
     {
         var select = 0
         
@@ -94,7 +94,7 @@ extension Game
     
     
     
-     func magicHappens(i: Int, powerPosition: [Int], position: Int) // use of healing functions when there are several healers -> follows chooseWhoHeals.
+    func magicHappens(i: Int, powerPosition: [Int], position: Int) // use of healing functions when there are several healers -> follows chooseWhoHeals.
     {
         switch players[i].party[powerPosition[position]]
         {
@@ -113,3 +113,4 @@ extension Game
     }
     
 }
+

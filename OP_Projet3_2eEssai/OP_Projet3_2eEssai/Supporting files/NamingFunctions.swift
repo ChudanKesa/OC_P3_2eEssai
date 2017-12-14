@@ -56,13 +56,13 @@ extension Support
         return name
     }
     
-   
+    
     
     
     
     
     // gives name and checks if it's already attributed. If there are no names left availlable, name = ERROR.
-    static func autoName(read: String) -> String
+    static func autoName(caste: String) -> String
     {
         var name = ""
         var error = true
@@ -76,7 +76,7 @@ extension Support
             }
             else if name == "ERROR"
             {
-                print("No more automatic names availlable. Please enter a new one.\n")
+                print("You enroled a \(caste), but there are no more automatic names availlable. Please enter a new one.\n")
                 name = askForName()
                 error = false
             }
@@ -101,7 +101,7 @@ extension Support
     static func nameTaken(name entry: String) -> Bool
     {
         var nameTaken = false
-
+        
         for i in 0..<caractersNames.count
         {
             if entry == caractersNames[i]
@@ -116,3 +116,4 @@ extension Support
         return nameTaken
     }
 }
+

@@ -11,7 +11,7 @@ import Foundation
 extension Game
 {
     
-     func chooseAttacker(i: Int) -> Int // choose Caracter whom attack
+    func chooseAttacker(i: Int) -> Int // choose Caracter whom attack
     {
         var select = 0
         
@@ -47,7 +47,7 @@ extension Game
     
     
     
-     func autoTarget(i: Int) -> Caracter // when only one opponent remains, automaticly attacks him
+    func autoTarget(i: Int) -> Caracter // when only one opponent remains, automaticly attacks him
     {
         var target = players[0].party[0]
         
@@ -70,7 +70,7 @@ extension Game
     
     
     
-     func chooseTarget(i: Int) -> Caracter // choose whom to attack
+    func chooseTarget(i: Int) -> Caracter // choose whom to attack
     {
         var targetsRepository = [Caracter]()
         var select = 0
@@ -109,7 +109,7 @@ extension Game
     
     
     
-     func attack(i: Int, target: Caracter, select: Int)
+    func attack(i: Int, target: Caracter, select: Int)
     {
         switch Int(arc4random_uniform(UInt32((2))))
         {
@@ -125,3 +125,4 @@ extension Game
     }
     
 }
+

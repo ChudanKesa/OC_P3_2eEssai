@@ -1,8 +1,8 @@
 //
-//  RandomNames.swift
-//  Projet3
+//  RobotNames.swift
+//  OP_Projet3_2eEssai
 //
-//  Created by Erwan Le Querré on 02/11/2017.
+//  Created by Erwan Le Querré on 08/12/2017.
 //  Copyright © 2017 Erwan Le Querré. All rights reserved.
 //
 
@@ -10,55 +10,51 @@ import Foundation
 
 extension Support
 {
-    // returns a random name so askForName can get it.
+    static var robotNames = ["Tachikomas",
+                             "GERTY",
+                             "Talos",
+                             "Hadaly",
+                             "Chip",
+                             "SHROUD",
+                             "SHOCK",
+                             "Elio",
+                             "Life Emulation Android",
+                             "Copper",
+                             "Wired",
+                             "Systematic Destruction Watchamacallit",
+                             "Tactical Eliminator",
+                             "Wall-G",
+                             "Automatic Slicing Self-Moving Device",
+                             "QTP",
+                             "Tim",
+                             "Neohuman",
+                             "Plastic Replacement",
+                             "Big PieceOfMachinery",
+                             "Destructive Automaton"]
     
-    static func robotNames(i: Int) -> String
+    static var usedRobotNames = [String]()
+    
+    static var namesOverloaded = 0
+    
+    static func getRobotName() -> String
     {
-        var name = ""
-        var rand = 0
+        let name: String
+        let rand = Int(arc4random_uniform(UInt32(Support.robotNames.count)))
         
-        var names = ["Tachikomas",
-                     "GERTY",
-                     "Talos",
-                     "Hadaly",
-                     "Chip",
-                     "SHROUD",
-                     "SHOCK",
-                     "Elio",
-                     "Life Emulation Android",
-                     "Copper",
-                     "Wired",
-                     "Systematic Destruction Watchamacallit",
-                     "Tactical Eliminator",
-                     "Wall-G",
-                     "Automatic Slicing Self-Moving Device",
-                     "QTP",
-                     "Tim",
-                     "Neohuman",
-                     "Plastic Replacement",
-                     "Big PieceOfMachinery",
-                     "Destructive Automaton"]
-        
-        rand = Int(arc4random_uniform(UInt32(names.count)))
-        if (rand + i) > names.count
+        if Support.robotNames.count == 0
         {
-            if i < names.count
-            {
-                rand = 0
-                name = names[rand + i]
-            }
-                
-            else
-            {
-                name = "ERROR"
-            }
+            namesOverloaded += 1
+            name = "RANDOM_AUTOMATON_\(String(format: "%02d", namesOverloaded))"
         }
-        
+            
+        else
+        {
+            name = robotNames[rand]
+            usedRobotNames.append(robotNames[rand])
+            robotNames.remove(at: rand)
+        }
         
         return name
     }
 }
-
-
-
 

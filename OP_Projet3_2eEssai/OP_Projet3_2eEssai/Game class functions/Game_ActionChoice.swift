@@ -71,7 +71,7 @@ extension Game
         
         attack(i: i, target: target, select: select)
     }
-
+    
 }
 
 

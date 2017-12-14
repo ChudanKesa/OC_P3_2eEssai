@@ -27,7 +27,14 @@ class Warrior: Caracter
     {
         super.init(lifePoints: 100, weapon: Weapon(name: "Sword", damage: 10), name: "")
         caste = .warrior
-        name = Support.autoName(read: "")
+        name = Support.autoName(caste: "warrior")
+    }
+    
+    init(robot: Bool)
+    {
+        super.init(lifePoints: 100, weapon: Weapon(name: "Sword", damage: 10), name: "")
+        caste = .warrior
+        name = Support.getRobotName()
     }
 }
 
@@ -55,15 +62,15 @@ class Wizzard: Caracter
         super.init(lifePoints: 90, weapon: Weapon(name: "Staff", damage: 5), name: "")
         power.weapon = self.weapon
         caste = .wizzard
-        name = Support.autoName(read: "")
+        name = Support.autoName(caste: "wizzard")
     }
     
-    init(robot: String)
+    init(robot: Bool)
     {
         super.init(lifePoints: 90, weapon: Weapon(name: "Staff", damage: 5), name: "")
         power.weapon = self.weapon
         caste = .wizzard
-        name = robot
+        name = Support.getRobotName()
     }
 }
 
@@ -87,14 +94,14 @@ class Giant: Caracter
     {
         super.init(lifePoints: 210, weapon: Weapon(name: "Giant bare hands", damage: 4), name: "")
         caste = .giant
-        name = Support.autoName(read: "")
+        name = Support.autoName(caste: "giant")
     }
     
-    init(robot: String)
+    init(robot: Bool)
     {
         super.init(lifePoints: 210, weapon: Weapon(name: "Giant bare hands", damage: 4), name: "")
         caste = .giant
-        name = robot
+        name = Support.getRobotName()
     }
 }
 
@@ -116,14 +123,14 @@ class Dwarf: Caracter
     {
         super.init(lifePoints: 70, weapon: Weapon(name: "Axe", damage: 14), name: "")
         caste = .dwarf
-        name = Support.autoName(read: "")
+        name = Support.autoName(caste: "dwarf")
     }
     
-    init(robot: String)
+    init(robot: Bool)
     {
         super.init(lifePoints: 70, weapon: Weapon(name: "Axe", damage: 14), name: "")
         caste = .dwarf
-        name = robot
+        name = Support.getRobotName()
     }
 }
 
@@ -145,14 +152,14 @@ class Archer: Caracter
     {
         super.init(lifePoints: 90, weapon: Weapon(name: "Bow", damage: 9), name: "")
         caste = .archer
-        name = Support.autoName(read: "")
+        name = Support.autoName(caste: "archer")
     }
     
-    init(robot: String)
+    init(robot: Bool)
     {
         super.init(lifePoints: 90, weapon: Weapon(name: "Bow", damage: 9), name: "")
         caste = .archer
-        name = robot
+        name = Support.getRobotName()
     }
 }
 

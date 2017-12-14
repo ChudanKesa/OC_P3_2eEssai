@@ -10,11 +10,18 @@ import Foundation
 
 var keepGoing = true
 
-while keepGoing
+/*while keepGoing
+ {
+ let game = Game()
+ keepGoing = game.finishGame()
+ }*/
+
+let robot = IA()
+print("\(robot.name)\n")
+
+for i in 1...3
 {
-    let game = Game()
-    keepGoing = game.finishGame()
+    print("\(robot.party[i-1].name)")
 }
 
-
-
+print("\n\(robot.party.count)")

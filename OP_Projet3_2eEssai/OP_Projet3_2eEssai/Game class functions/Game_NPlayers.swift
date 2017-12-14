@@ -22,7 +22,7 @@ extension Game
         {
             print("Enter name of Player\(i) :")
             name = Support.askForString()
-            players.append(Player(name: name))
+            players.append(Player(name: name, party: players[i].setParty()))
         }
         
         return players
@@ -63,7 +63,7 @@ extension Game
         {
             print("You want to start a game with \(numberOfPlayers) player. Is that correct ?")
         }
-        
+            
         else
         {
             print("You want to start a game with \(numberOfPlayers) players. Is that correct ?")

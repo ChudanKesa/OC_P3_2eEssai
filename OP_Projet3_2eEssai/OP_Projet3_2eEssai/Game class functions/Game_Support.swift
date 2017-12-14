@@ -77,7 +77,7 @@ extension Game
     
     
     // asks what to do
-     func actionChoice() -> Int
+    func actionChoice() -> Int
     {
         print("""
             What will you do ?
@@ -93,7 +93,7 @@ extension Game
     
     
     // calls players whose turn it is
-     func callPlayer(i: Int)
+    func callPlayer(i: Int)
     {
         print("\(players[i].name), it's your turn.")
         usleep(1 * 100 * 1000)

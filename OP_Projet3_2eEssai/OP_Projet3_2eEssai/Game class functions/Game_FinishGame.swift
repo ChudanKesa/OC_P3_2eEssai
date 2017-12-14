@@ -22,7 +22,7 @@ extension Game
             removeDeadPlayers()
             victory = clearVictory()
         }
-
+        
         return keepPlaying
     }
     
@@ -116,7 +116,7 @@ extension Game
             print("\t", terminator: "")
             Support.slowWriting(sentence: "Congratulations, \(players[0].name) ! You vanquished your opponents. This game is yours !")
         }
-        
+            
         else
         {
             Support.slowWriting(sentence: "The ashes of the war finally set. No side emerged victor.\nEveryone is dead.")
@@ -143,6 +143,17 @@ extension Game
         sleep(1)
         print("")
         players.remove(at: 0)
+        for _ in 0..<Support.usedRobotNames.count
+        {
+            Support.robotNames.append(Support.usedRobotNames[0])
+            Support.usedRobotNames.remove(at: 0)
+        }
+        for _ in 0..<Support.usedIANames.count
+        {
+            Support.IANames.append(Support.usedIANames[0])
+            Support.usedIANames.remove(at: 0)
+        }
+        Support.namesOverloaded = 0
     }
     
     
@@ -165,3 +176,4 @@ extension Game
     }
     
 }
+
