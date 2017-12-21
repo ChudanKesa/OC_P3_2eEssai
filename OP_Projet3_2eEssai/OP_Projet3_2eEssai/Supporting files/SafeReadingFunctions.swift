@@ -117,6 +117,9 @@ class Support
             }
         }
         
+        if retour == "n" {retour = "N"}
+        if retour == "y" {retour = "Y"}
+        
         return retour
     }
     

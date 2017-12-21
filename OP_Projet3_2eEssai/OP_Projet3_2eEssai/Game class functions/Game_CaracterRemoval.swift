@@ -11,7 +11,7 @@ import Foundation
 extension Game
 {
     
-    func lastOneStanding() // checks if there is only one dying caracter left in a party (so he can still get a turn before dying)
+    func lastOneStanding(i: Int) // checks if there is only one dying caracter left in a party (so he can still get a turn before dying)
     {
         for l in 0..<players.count
         {
@@ -20,7 +20,7 @@ extension Game
                 switch players[l].lastOneStanding
                 {
                 case true:
-                    players[l].lastOneStanding = false
+                    if l == i {players[l].lastOneStanding = false}
                 case false:
                     players[l].lastOneStanding = true
                 }
@@ -69,11 +69,11 @@ extension Game
     // text to call when lastonestanding == true
     private func lastOneStandingCall(e: Int)
     {
-        sleep(1)
+      //  sleep(1)
         print("\nOh no ! \(players[e].party[0].name) is dying !")
-        usleep(1 * 100 * 1000)
+       // usleep(1 * 100 * 1000)
         print("He muster the strenght for one last strike !")
-        usleep(15 * 100 * 1000)
+       // usleep(15 * 100 * 1000)
     }
     
     
@@ -103,23 +103,18 @@ extension Game
         {
         case 0:
             print("Tough luck for \(players[e].name) ! \(players[e].party[j].name) just died !\n")
-            usleep(15 * 100 * 1000)
         case 1:
             print("Sorry, \(players[e].name) ! \(players[e].party[j].name) did his best.\n")
-            usleep(15 * 100 * 1000)
         case 2:
             print("One warrior down : \(players[e].party[j].name) left the game.\n")
-            usleep(15 * 100 * 1000)
         case 3:
             print("\(players[e].name) will have to do with one less player !\n")
-            usleep(15 * 100 * 1000)
         case 4:
             print("\(players[e].party[j].name) down ! How will \(players[e].name) react ?\n")
-            usleep(15 * 100 * 1000)
         default:
             print("\(players[e].party[j].name) left this world...\n")
-            usleep(15 * 100 * 1000)
         }
+        //usleep(15 * 100 * 1000)
         deceased.append((e, j))
     }
     

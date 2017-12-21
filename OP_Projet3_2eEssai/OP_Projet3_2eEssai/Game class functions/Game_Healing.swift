@@ -62,11 +62,36 @@ extension Game
         }
         select = Support.secureInt(lowerLimit: 1, upperLimit: players[i].party.count)
         target = players[i].party[select-1]
-        print("\(players[i].party[powerPosition[position]].name) uses \((players[i].party[powerPosition[position]] as! Wizzard).power.useHeal(target: target)) on \(target.name) !")
-        usleep(1 * 100 * 1000)
-        print("\(target.name) has \(target.lifePoints) life points.")
-        target.lifeBar(caracter: target)
-        usleep(1 * 1000 * 1000)
+        print("\(players[i].party[powerPosition[position]].name) uses \((players[i].party[powerPosition[position]] as! Wizzard).power.useHeal(healer: players[i].party[powerPosition[position]], target: target)) on", terminator: " ")
+        if players[i].party[powerPosition[position]] === target
+        {
+            if target.weapon.name == "Long staff"
+            {
+                print("the party !")
+                for y in 0..<players[i].party.count
+                {
+                    print("\(players[i].party[y].name) has \(players[i].party[y].lifePoints) life points.")
+                    players[i].party[y].symbol(caste: players[i].party[y]); print("")
+                }
+            }
+            else
+            {
+                print("himself !")
+                usleep(1 * 100 * 1000)
+                print("\(target.name) has \(target.lifePoints) life points.")
+                target.lifeBar(caracter: target)
+                usleep(1 * 1000 * 1000)
+            }
+        }
+        else
+        {
+            print(target.name)
+            usleep(1 * 100 * 1000)
+            print("\(target.name) has \(target.lifePoints) life points.")
+            target.lifeBar(caracter: target)
+            usleep(1 * 1000 * 1000)
+        }
+        
     }
     
     

@@ -33,7 +33,7 @@ extension Game
                 
                 if players[i] is IA
                 {
-                    (players[i] as! IA).iaTurn(i: i, powerPosition: powerPosition, totalEnnemiesLeft: totalEnnemiesLeft, players: players)
+                    (players[i] as! IA).iaTurn(i: i, powerPosition: powerPosition, players: players)
                 }
                     
                 else
@@ -48,7 +48,7 @@ extension Game
                     }
                 }
                 
-                lastOneStanding()
+                lastOneStanding(i: i)
                 removeTheDead()
             }
         }

@@ -13,24 +13,24 @@ extension Player
     // recaps party and asks confirmation
     func askConfirmParty(IA: Bool)
     {
-        usleep(1 * 100 * 1000)
+    //    usleep(1 * 100 * 1000)
         if IA
-        {print("\n\(name), welcome to existence.\n"); usleep(1*1000*1000)}
+        {print("\n\(name), welcome to existence.\n")}//; usleep(1*1000*1000)}
         print("Your warriors has been chosen. You will fight with ")
-        usleep(10 * 100 * 1000)
+     //   usleep(10 * 100 * 1000)
         for i in 1...3
         {
             switch i
             {
             case 1:
                 print("\(party[i-1].name), \(party[i-1].adressCaracter(caracter: party[i-1]))")
-                usleep(9 * 100 * 1000)
+   //             usleep(9 * 100 * 1000)
             case 2:
                 print("\(party[i-1].name), \(party[i-1].adressCaracter(caracter: party[i-1]))")
-                usleep(9 * 100 * 1000)
+      //          usleep(9 * 100 * 1000)
             case 3:
                 print("and \(party[i-1].name), \(party[i-1].adressCaracter(caracter: party[i-1])).")
-                usleep(9 * 100 * 1000)
+    //            usleep(9 * 100 * 1000)
             default:
                 Support.errorLog(origin: "Players", detail: "Switch 'i' would not read")
             }
@@ -39,6 +39,7 @@ extension Player
         {
             print("Is that correct ?\nY/N")
         }
+        else {print("\n")}
     }
     
     
@@ -95,7 +96,7 @@ extension Player
     
     
     
-    // makes note of how many wizzard and where there are.
+    // points their teams to the wizzards so they can heal it.
     func wizzardSearch()
     {
         for i in 0..<party.count

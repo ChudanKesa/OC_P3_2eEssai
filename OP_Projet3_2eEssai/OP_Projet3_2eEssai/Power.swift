@@ -85,32 +85,62 @@ class Healing: Power // contains different ways to heal, based on weapon. Last o
         }
     }
     
-    // ----------------------------------------------
-    // switch weapon to choose which power to actually use.
+
     
-    func useHeal(target: Caracter) -> String
+    
+    
+    
+    // switch weapon to choose which power to actually use. 1/10 chances for weapon change.
+    func useHeal(healer: Caracter, target: Caracter) -> String
     {
         var healName = ""
-        switch weapon.name
-        {
-        case "Staff":
-            healing(target: target)
-            healName = "healing"
-        case "Wand":
-            weakenedHealing(target: target)
-            healName = "weakened healing"
-        case "Sacred oak":
-            superiorHealing(target: target)
-            healName = "superior healing"
-        case "Long staff":
-            multHealing(target: (target as! Wizzard).team)
-            healName = "multi healing"
-        default:
-            Support.errorLog(origin: "Powers", detail: "weapon.name non recognized")
-        }
+        let rand = Int(arc4random_uniform(UInt32((10))))
         
-        return healName
-    }
+        switch rand
+        {
+        case 0:
+            let text = "...\n\(healer.newWeapon(caracter: healer))\n\(healer.name) uses "
+            switch weapon.name
+            {
+            case "Staff":
+                healing(target: target)
+                healName = "healing"
+            case "Wand":
+                weakenedHealing(target: target)
+                healName = "weakened healing"
+            case "Sacred oak":
+                superiorHealing(target: target)
+                healName = "superior healing"
+            case "Long staff":
+                multHealing(target: (target as! Wizzard).team)
+                healName = "multi healing"
+            default:
+                Support.errorLog(origin: "\(#file)", detail: "\(#line)")
+            }
+            
+            return text + healName
+            
+        default:
+            switch weapon.name
+            {
+            case "Staff":
+                healing(target: target)
+                healName = "healing"
+            case "Wand":
+                weakenedHealing(target: target)
+                healName = "weakened healing"
+            case "Sacred oak":
+                superiorHealing(target: target)
+                healName = "superior healing"
+            case "Long staff":
+                multHealing(target: (target as! Wizzard).team)
+                healName = "multi healing"
+            default:
+                Support.errorLog(origin: "\(#file)", detail: "\(#line)")
+            }
+            return healName
+        }
+}
     
 } // class Healing
 

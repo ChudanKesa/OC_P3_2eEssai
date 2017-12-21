@@ -63,23 +63,46 @@ class Caracter // basis for the caracters used in the game.
         target.lifeBar(caracter: target)
     }
     
-    // ----------------------------
-    // to be used in the game to change the weapon of caracters. Could be done with openChest directly, but this feels more clear.
+
     
-    func newWeapon(caracter: Caracter)
+    
+    
+    
+    // to be used in the game to change the weapon of caracters. Could be done with openChest directly, but this feels more clear.
+    func newWeapon(caracter: Caracter) -> String
     {
-        caracter.weapon = Chest.openChest(caste: caracter.caste)
+        var weapon = Chest.openChest(caste: caracter.caste)
+        {
+            didSet
+            {
+                var same = true
+                while same
+                {
+                    if caracter.weapon === weapon.0
+                    {
+                        weapon = Chest.openChest(caste: caracter.caste)
+                    }
+                    else {same = false}
+                }
+            }
+        }
+
+        caracter.weapon = weapon.0
         if caracter is Wizzard
         {
             (caracter as! Wizzard).power.weapon = caracter.weapon
         }
+        return weapon.1
     }
     
     
-    // --------------------------------
+
+    
+    
+    
+    
     
     // a simple description based on caracter class. Useless, but lights the main code a little.
-    
     static func caracterDescription(caste: Class) -> String
     {
         var description = ""
@@ -103,10 +126,13 @@ class Caracter // basis for the caracters used in the game.
         return description
     }
     
-    // --------------------------------
+
+    
+    
+    
+    
     
     // set up here wich classes must be adressed with "a" or "an". Also add the class symbol after call.
-    
     func adressCaracter(caracter: Caracter) -> String
     {
         if caracter.caste.rawValue[caracter.caste.rawValue.index(caracter.caste.rawValue.startIndex, offsetBy: 0)] == "A" ||

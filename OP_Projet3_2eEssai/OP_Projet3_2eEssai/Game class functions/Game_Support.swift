@@ -17,7 +17,7 @@ extension Game
         
         for t in 0..<players.count
         {
-            if t != i
+            if t != i && !players[t].lastOneStanding
             {
                 totalEnnemiesLeft += players[t].party.count
             }

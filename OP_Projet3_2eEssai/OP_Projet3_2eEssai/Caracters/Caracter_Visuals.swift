@@ -14,28 +14,24 @@ extension Caracter
     
     func lifeBar(caracter: Caracter)
     {
-        var total = 0
         var sign = "⚔"
         
         switch caracter.caste
         {
         case .warrior:
-            total = 100
             sign = "⚔"
         case .wizzard:
-            total = 90
             sign = "🔮"
         case .giant:
-            total = 210
             sign = "👹"
         case .dwarf:
-            total = 70
             sign = "🍺"
         default:
             Support.errorLog(origin: "Images", detail: "switch caracter.caste")
         }
         
-        let actualLife = (((caracter.lifePoints)*100)/total)/2
+        var actualLife = (((caracter.lifePoints)*100)/caracter.maxLifePoints)/2
+        if actualLife <= caracter.maxLifePoints/50 && caracter.lifePoints != 0 {actualLife = 1}
         
         switch actualLife
         {
@@ -56,15 +52,16 @@ extension Caracter
             {
                 print("|", terminator: "")
             }
-            print("")
-            print("   --------------------------------------------------")
+            print("\n   --------------------------------------------------")
         }
         
         print("\n", terminator: "")
         
-    } // func
+    }
     
-    //------------------------------------
+
+    
+    
     
     // show a symbol based on caracter class so they're easier to identify in the game. Also, prettier menus.
     
@@ -85,7 +82,9 @@ extension Caracter
         }
     }
     
-    //------------------------------------
+
+    
+    
     
     // same idea as lifeBar, to be used when little space is available.
     
@@ -97,7 +96,7 @@ extension Caracter
     
     
     
-} // extension Caracters
+}
 
 
 

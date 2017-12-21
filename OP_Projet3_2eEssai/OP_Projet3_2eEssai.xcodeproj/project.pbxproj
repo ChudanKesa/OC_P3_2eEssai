@@ -32,9 +32,11 @@
 		5076C53C1FD03696001D3B45 /* RandomNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5076C53B1FD03696001D3B45 /* RandomNames.swift */; };
 		5076C53E1FD036B5001D3B45 /* RobotNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5076C53D1FD036B5001D3B45 /* RobotNames.swift */; };
 		5076C5401FD037AD001D3B45 /* NamingFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5076C53F1FD037AD001D3B45 /* NamingFunctions.swift */; };
+		50849D3B1FEC119C009D2AFB /* IA_Healing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50849D3A1FEC119C009D2AFB /* IA_Healing.swift */; };
+		50849D3D1FEC1229009D2AFB /* IA_Targeting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50849D3C1FEC1229009D2AFB /* IA_Targeting.swift */; };
 		508E172C1FD6A6B300472E58 /* Cheats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508E172B1FD6A6B300472E58 /* Cheats.swift */; };
 		50B8FEAD1FE2B18E00D1083E /* Players_IA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B8FEAC1FE2B18E00D1083E /* Players_IA.swift */; };
-		50B8FEAF1FE2B19700D1083E /* IA_Attack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B8FEAE1FE2B19700D1083E /* IA_Attack.swift */; };
+		50B8FEAF1FE2B19700D1083E /* IA_Turn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B8FEAE1FE2B19700D1083E /* IA_Turn.swift */; };
 		50B8FEB11FE2B21800D1083E /* IANames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B8FEB01FE2B21800D1083E /* IANames.swift */; };
 /* End PBXBuildFile section */
 
@@ -77,9 +79,11 @@
 		5076C53B1FD03696001D3B45 /* RandomNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNames.swift; sourceTree = "<group>"; };
 		5076C53D1FD036B5001D3B45 /* RobotNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobotNames.swift; sourceTree = "<group>"; };
 		5076C53F1FD037AD001D3B45 /* NamingFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamingFunctions.swift; sourceTree = "<group>"; };
+		50849D3A1FEC119C009D2AFB /* IA_Healing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IA_Healing.swift; sourceTree = "<group>"; };
+		50849D3C1FEC1229009D2AFB /* IA_Targeting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IA_Targeting.swift; sourceTree = "<group>"; };
 		508E172B1FD6A6B300472E58 /* Cheats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cheats.swift; sourceTree = "<group>"; };
 		50B8FEAC1FE2B18E00D1083E /* Players_IA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Players_IA.swift; path = ../../../../../Projet_03.02/OC_P3_2eEssai/OP_Projet3_2eEssai/OP_Projet3_2eEssai/Player/Players_IA.swift; sourceTree = "<group>"; };
-		50B8FEAE1FE2B19700D1083E /* IA_Attack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IA_Attack.swift; path = ../../../../../Projet_03.02/OC_P3_2eEssai/OP_Projet3_2eEssai/OP_Projet3_2eEssai/Player/IA_Attack.swift; sourceTree = "<group>"; };
+		50B8FEAE1FE2B19700D1083E /* IA_Turn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IA_Turn.swift; path = ../../../../../Projet_03.02/OC_P3_2eEssai/OP_Projet3_2eEssai/OP_Projet3_2eEssai/Player/IA_Turn.swift; sourceTree = "<group>"; };
 		50B8FEB01FE2B21800D1083E /* IANames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IANames.swift; path = "../../../../../Projet_03.02/OC_P3_2eEssai/OP_Projet3_2eEssai/OP_Projet3_2eEssai/Supporting files/IANames.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -173,7 +177,9 @@
 				504D790C1FCF366B00A85B6B /* Player_SetParty.swift */,
 				504D790E1FCF37C900A85B6B /* Player_Tools.swift */,
 				50B8FEAC1FE2B18E00D1083E /* Players_IA.swift */,
-				50B8FEAE1FE2B19700D1083E /* IA_Attack.swift */,
+				50B8FEAE1FE2B19700D1083E /* IA_Turn.swift */,
+				50849D3A1FEC119C009D2AFB /* IA_Healing.swift */,
+				50849D3C1FEC1229009D2AFB /* IA_Targeting.swift */,
 			);
 			path = Player;
 			sourceTree = "<group>";
@@ -243,13 +249,14 @@
 				5076C53C1FD03696001D3B45 /* RandomNames.swift in Sources */,
 				506318F91FD047C0003EB35C /* Game_FinishGame.swift in Sources */,
 				504D79011FCF108900A85B6B /* ErrorsLog.swift in Sources */,
-				50B8FEAF1FE2B19700D1083E /* IA_Attack.swift in Sources */,
+				50B8FEAF1FE2B19700D1083E /* IA_Turn.swift in Sources */,
 				504D78F01FCEC25500A85B6B /* main.swift in Sources */,
 				5076C53E1FD036B5001D3B45 /* RobotNames.swift in Sources */,
 				504D79151FCF39C000A85B6B /* Caracter_Visuals.swift in Sources */,
 				506318F11FD0430E003EB35C /* Game_Support.swift in Sources */,
 				504D790D1FCF366B00A85B6B /* Player_SetParty.swift in Sources */,
 				506318ED1FD04293003EB35C /* Game_PlayGame.swift in Sources */,
+				50849D3B1FEC119C009D2AFB /* IA_Healing.swift in Sources */,
 				506318F71FD04610003EB35C /* Game_CaracterRemoval.swift in Sources */,
 				504D790F1FCF37C900A85B6B /* Player_Tools.swift in Sources */,
 				504D78F91FCEF6A300A85B6B /* Player.swift in Sources */,
@@ -257,6 +264,7 @@
 				50B8FEAD1FE2B18E00D1083E /* Players_IA.swift in Sources */,
 				506318F51FD044D8003EB35C /* Game_Healing.swift in Sources */,
 				506318EF1FD042CA003EB35C /* Game_ActionChoice.swift in Sources */,
+				50849D3D1FEC1229009D2AFB /* IA_Targeting.swift in Sources */,
 				504D78F71FCEE92E00A85B6B /* Game.swift in Sources */,
 				504D79131FCF392600A85B6B /* Chest.swift in Sources */,
 				508E172C1FD6A6B300472E58 /* Cheats.swift in Sources */,

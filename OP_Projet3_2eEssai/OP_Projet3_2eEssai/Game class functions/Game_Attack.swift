@@ -47,17 +47,25 @@ extension Game
     
     
     
-    func autoTarget(i: Int) -> Caracter // when only one opponent remains, automaticly attacks him
+    /* when only one opponent remains, automaticly attacks him. Takes in account the fact that
+     there may be lastOneStanding caracters on some teams and ignore them. */
+    func autoTarget(i: Int) -> Caracter
     {
-        var target = players[0].party[0]
+        var target = players[i].party[0]
         
-        switch i
+        for y in 0..<players.count
         {
-        case 0:
-            target = players[1].party[0]
-        case 1:
-            target = players[0].party[0]
-        default:
+            if y != i
+            {
+                if !players[y].lastOneStanding && players[y].party[0].lifePoints > 0 //second condition made to avoid bugs when cheating
+                {
+                    target = players[y].party[0]
+                }
+            }
+        }
+        
+        if target === players[i].party[0]
+        {
             Support.errorLog(origin: "\(#file)", detail: "\(#line)")
             exit(1)
         }
@@ -81,7 +89,7 @@ extension Game
         {
             for y in 0..<players[j].party.count
             {
-                if j != i
+                if j != i && !players[j].lastOneStanding
                 {
                     if players.count > 2
                     {
@@ -114,7 +122,7 @@ extension Game
         switch Int(arc4random_uniform(UInt32((2))))
         {
         case 0:
-            players[i].party[select-1].newWeapon(caracter: players[i].party[select-1])
+            print("\(players[i].party[select-1].newWeapon(caracter: players[i].party[select-1]))")
         case 1:
             break
         default:

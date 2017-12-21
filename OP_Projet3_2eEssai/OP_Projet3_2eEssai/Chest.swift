@@ -13,7 +13,7 @@ class Chest
 {
     // pick a new weapon and return it to be equiped.
     
-    static func openChest(caste: Caracter.Class) -> Weapon
+    static func openChest(caste: Caracter.Class) -> (Weapon, String)
     {
         var weapon = Weapon()
         
@@ -58,19 +58,31 @@ class Chest
         case .giant:
             weapon = hands[weaponSelect]
         default:
-            Support.errorLog(origin: "Chests", detail: "litterarly one thing can go wrong here")
+            Support.errorLog(origin: "\(#file)", detail: "\(#line)")
         }
         
-        print("A magical treasure chest appeared before you !")
-        usleep(15 * 100 * 1000)
-        print("""
+        
+        var text = """
+            A magical treasure chest appeared before you !\n
             You open it and take its contents.\n
             You've obtained a new weapon : \(weapon.adressWeapon(weapon: weapon)).\n
             It causes \(weapon.damage) damage per hit.\n
-            """)
-        sleep(1)
+            """
+        switch weapon.name
+        {
+        case "Staff":
+            text += "It heals 10 damages.\n"
+        case "Sacred oak":
+            text += "It heals 18 damages.\n"
+        case "Long staff":
+            text += "It heals the entire party by 9 damages.\n"
+        case "Wand":
+            text += "It heals 8 damages.\n"
+        default:
+            break
+        }
         
-        return weapon
+        return (weapon, text)
         
     }
 }

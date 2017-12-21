@@ -25,13 +25,13 @@ extension Game
         
         return keepPlaying
     }
+
     
     
     
     
-    
-    
-    private func removeDeadPlayers() // remove players that lost from [players]
+    // remove players that lost from [players]
+    private func removeDeadPlayers()
     {
         var removal = [Int]()
         
@@ -40,10 +40,11 @@ extension Game
             if players[i].party.count == 0
             {
                 print("\n\t")
-                Support.slowWriting(sentence: "\(players[i].name)'s party was defeated...")
-                sleep(1)
-                print("\t", terminator: "")
-                Support.slowWriting(sentence: "\(players[i].name) lost.")
+                // Support.slowWriting(sentence: "\(players[i].name)'s party was defeated...")
+                print("\(players[i].name)'s party was defeated...\n\t\(players[i].name) lost.")
+                //sleep(1)
+                //print("\t", terminator: "")
+                //Support.slowWriting(sentence: "\(players[i].name) lost.")
                 removal.append(i)
             }
         }
@@ -67,22 +68,13 @@ extension Game
             announceVictory()
             switch Support.askYN()
             {
-            case "y":
-                prepare()
-                for _ in 1...Support.caractersNames.count
-                {
-                    Support.names.append(Support.caractersNames[0])
-                    Support.caractersNames.remove(at: 0)
-                }
             case "Y":
                 prepare()
-                for _ in 1...Support.caractersNames.count
+                for _ in 0..<Support.caractersNames.count
                 {
                     Support.names.append(Support.caractersNames[0])
                     Support.caractersNames.remove(at: 0)
                 }
-            case "n":
-                endGame()
             case "N":
                 endGame()
             default:
@@ -142,7 +134,7 @@ extension Game
         print("")
         sleep(1)
         print("")
-        players.remove(at: 0)
+        if players.count>0 {players.remove(at: 0)} // condition added to avoid bug when cheating.
         for _ in 0..<Support.usedRobotNames.count
         {
             Support.robotNames.append(Support.usedRobotNames[0])
