@@ -30,7 +30,8 @@ class Healing: Power // contains different ways to heal, based on weapon. Last o
         }
         else
         {
-            print("Strange choince : \(target.name) already has all his life points, and will be unnafected.")
+            // this will trigger the didSet component of lifePoints
+            target.lifePoints = target.lifePoints + 10 - 10
         }
     }
     
@@ -46,7 +47,7 @@ class Healing: Power // contains different ways to heal, based on weapon. Last o
         }
         else
         {
-            print("Strange choince : \(target.name) already has all his life points, and will be unnafected.")
+            target.lifePoints = target.lifePoints + 10 - 10
         }
     }
     
@@ -62,7 +63,7 @@ class Healing: Power // contains different ways to heal, based on weapon. Last o
         }
         else
         {
-            print("Strange choince : \(target.name) already has all his life points, and will be unnafected.")
+            target.lifePoints = target.lifePoints + 10 - 10
         }
     }
     
@@ -74,13 +75,9 @@ class Healing: Power // contains different ways to heal, based on weapon. Last o
             {
                 target[i].lifePoints += 9
             }
-            else if target[i].maxLifePoints - target[i].lifePoints < 9 && target[i].lifePoints < target[i].maxLifePoints
-            {
-                target[i].lifePoints = target[i].maxLifePoints
-            }
             else
             {
-                print("Strange choince : \(target[i].name) already has all his life points, and will be unnafected.")
+                target[i].lifePoints = target[i].maxLifePoints
             }
         }
     }

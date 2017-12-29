@@ -23,6 +23,15 @@ class Caracter // basis for the caracters used in the game.
     }
     
     var lifePoints: Int
+    {
+        didSet
+        {
+            if oldValue == self.maxLifePoints
+            {
+               print("\(self.name) is going to be healed, but he already had all his life points, so he will be unaffected.\n")
+            }
+        }
+    }
     var maxLifePoints: Int
     var weapon : Weapon
     var name: String
@@ -78,12 +87,13 @@ class Caracter // basis for the caracters used in the game.
                 var same = true
                 while same
                 {
-                    if caracter.weapon === weapon.0
+                    if caracter.weapon.name == weapon.1
                     {
                         weapon = Chest.openChest(caste: caracter.caste)
                     }
                     else {same = false}
                 }
+                print("\n\tAncien weapon was : \(oldValue.1)\n\tNew weapon is : \(weapon.1)\n")
             }
         }
 

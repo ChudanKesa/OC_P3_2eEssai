@@ -21,7 +21,7 @@ extension Game
             
             for j in 0..<players[i].party.count
             {
-                print("\(j+1).", terminator: " "); players[i].party[j].symbol(caste: players[i].party[j]); print(" \(players[i].party[j].name)")
+                print("\(j+1).", terminator: " "); caracterShow(caracter: players[i].party[j])
             }
             
             select = Support.secureInt(lowerLimit: 1, upperLimit: players[i].party.count)
@@ -40,6 +40,18 @@ extension Game
         }
         
         return select
+    }
+    
+    
+    
+    
+    
+    
+    
+    // easier to write and read
+    private func caracterShow(caracter: Caracter)
+    {
+        caracter.symbol(caste: caracter); print(" \(caracter.name) - \(caracter.percent(life: caracter)) - \(caracter.weapon.name) : \(caracter.weapon.damage) damages")
     }
     
     

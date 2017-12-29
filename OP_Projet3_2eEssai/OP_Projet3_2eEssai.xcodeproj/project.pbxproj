@@ -176,8 +176,8 @@
 				504D78F81FCEF6A300A85B6B /* Player.swift */,
 				504D790C1FCF366B00A85B6B /* Player_SetParty.swift */,
 				504D790E1FCF37C900A85B6B /* Player_Tools.swift */,
-				50177ADC1FEC1FE7002E26DA /* IA_Turn.swift */,
 				50177ADB1FEC1FE6002E26DA /* Players_IA.swift */,
+				50177ADC1FEC1FE7002E26DA /* IA_Turn.swift */,
 				50849D3A1FEC119C009D2AFB /* IA_Healing.swift */,
 				50849D3C1FEC1229009D2AFB /* IA_Targeting.swift */,
 			);
