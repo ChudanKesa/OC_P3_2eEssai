@@ -52,7 +52,7 @@ extension Game
     func chooseWhoToHeal(i: Int, powerPosition: [Int], position: Int) // choose who gets the heal
     {
         var select = Int()
-        var target =  players[0].party[0]
+        var target = players[i].party[0]
         
         print("Who do you want to heal ?")
         for y in 0..<players[i].party.count
